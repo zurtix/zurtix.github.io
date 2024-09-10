@@ -7,9 +7,24 @@ import Layout from '../layouts/About.astro';
 	description="a litte bit about me"
 	pubDate={new Date('September 08 2024')}
 >
-  <div>
-  <p>A software engineer with a passion for understanding the dark side of the digital world</p>
-  <p>
-  </p>
+  <div class="text-center">
+    <p>A software engineer with a passion for understanding the dark side of the digital world</p><br/><br/>
+  </div>
+  <div class="text-left">
+    <h3 class="text-xl">My Experience</h3><br/>
+    <p class="font-bold"><span class="text-primary">{Math.floor((new Date() - new Date('January 01 2018')) / (1000 * 60 * 60 * 24 * 365))}</span> years Software Engineering</p>
+    <p class="font-bold"><span class="text-primary">{Math.floor((new Date() - new Date('October 01 2020')) / (1000 * 60 * 60 * 24 * 365))}</span> years Technology Lead | Cyber Threat Intelligence</p>
+    <br/>
+    <h3 class="text-xl">My Story</h3><br/>
+    <p>
+    My path into security isn't anything extraordinary (at least I don't think so), but I’d like to share how I went from point A to Z, in case it might inspire someone reading this.<br/><br/>
+    It all started in my younger days when I built my first computer. I was captivated by how these greenboards and their soldered components worked together. What was the brain, the heart, the limbs of this machine? That curiosity sparked a lifelong bond with computers.<br/><br/>
+    A few years later, however, I found myself dropping out of high school to work full-time, losing my passion for computers and pretty much everything else. It wasn’t until I grew tired of my job that I decided I needed to make a change. Don’t get me wrong, I’ve always loved working—it keeps me grounded—but there’s nothing worse than mind-numbing work. So, I took the opportunity to finish high school through remote learning, at my own pace. Traditional classrooms never suited me; I needed fast-paced, firehose-style learning.<br/><br/>
+    I self-taught the material, took the exams, and completed high school. From there, I moved on to college. But let’s be real—I’ve never liked formal education. I rarely attended classes unless there was an exam or a chance to hang out with friends (not the best decision, I know). Thankfully, most of my lectures were recorded online, so I could listen at 2x speed, which was much more my style. During this time, I developed a passion for C++. It felt like I’d rediscovered that childhood joy of tinkering with computers, this time by interacting with memory at a low level.<br/><br/>
+    After college, I landed my first job as a Java/C# Developer in production support for the financial sector. I didn’t love production support, but I was good at it. I had a knack for finding bugs in the middle of the night and reverse-engineering problematic code. In the process, I stumbled across things like plaintext passwords in applications—things that fueled my interest in security.<br/><br/>
+    This is when I realized reverse engineering was an actual career. It sounded perfect for me, but it’s a tough, niche field to break into. So, I set my sights on penetration testing. I spent countless hours on Hack The Box (HTB), a platform where you exploit virtual machines to capture flags. I learned a lot there, both through practice and by helping others. One of the people I befriended, H3x3D, eventually introduced me to a manager at the company he works at, giving me the chance to showcase my skills.<br/><br/>
+    At first, I didn’t look good on paper and was rejected quickly—understandably, since I had no formal security experience. But with the persistence of my friend and my own determination, I worked hard to prove myself. Eventually, that same manager gave me a shot. I wouldn’t be here today without the support of that manager and my friend. If either of you happens to read this, you have my deepest thanks.<br/><br/>
+    If you've made it this far, thank you for taking the time to get to know me. I hope we share some similarities in how we’ve navigated our paths, and that I feel a little less like a stranger to you now.
+    </p>
   </div>
 </Layout>

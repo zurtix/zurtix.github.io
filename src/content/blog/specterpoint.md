@@ -1,8 +1,9 @@
 ---
-title: 'Building the Blog'
-description: 'Why and How'
+title: 'SpecterPoint'
+description: 'The Rust C2 Server'
 pubDate: 'Sep 09 2024'
-heroImage: '/blog-placeholder-3.jpg'
+heroImage: '/specterpoint/specterpoint.jpg'
+tags: ['rust', 'c2', 'malware']
 ---
 
 Under construction

@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import { Badge } from '@/components/ui/badge';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -19,19 +20,19 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<section class="flex w-full justify-center">
-				<ul>
+			<section class="grid grid-cols-1 md:grid-cols-3 gap-2 w-full">
 					{
 						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.slug}/`}>
+							<div class="border border-secondary p-2">
+                <a href={`/blog/${post.slug}/`}>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
+									<h4 class="title font-bold p-2">{post.data.title}</h4>
+									<p class="date p-2">
 										<FormattedDate date={post.data.pubDate} />
-									</p>
+                  </p>
+                  <div class="flex gap-2 p-2">{post.data.tags.map((tag) => (<Badge variant="default">{tag}</Badge>))}</div>
 								</a>
-							</li>
+							</div>
 						))
 					}
 				</ul>
