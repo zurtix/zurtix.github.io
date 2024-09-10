@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/About.astro';
+
+const getYearsBetweenDates = (startDate: string | Date, endDate: string | Date): number => 
+    Math.floor(Math.abs((new Date(endDate).getTime() - new Date(startDate).getTime()) / (1000 * 60 * 60 * 24 * 365.25)));
 ---
 
 <Layout
@@ -11,8 +14,8 @@ import Layout from '../layouts/About.astro';
   </div>
   <div class="text-left">
     <h3 class="text-xl">My Experience</h3><br/>
-    <p class="font-bold"><span class="text-primary">{Math.floor((new Date() - new Date('January 01 2018')) / (1000 * 60 * 60 * 24 * 365))}</span> years Software Engineering</p>
-    <p class="font-bold"><span class="text-primary">{Math.floor((new Date() - new Date('October 01 2020')) / (1000 * 60 * 60 * 24 * 365))}</span> years Technology Lead | Cyber Threat Intelligence</p>
+    <p class="font-bold"><span class="text-primary">{getYearsBetweenDates(new Date(), 'January 01 2018')}</span> years Software Engineering</p>
+    <p class="font-bold"><span class="text-primary">{getYearsBetweenDates(new Date(), 'October 01 2020')}</span> years Technology Lead | Cyber Threat Intelligence</p>
     <br/>
     <h3 class="text-xl">My Story</h3><br/>
     <p>
