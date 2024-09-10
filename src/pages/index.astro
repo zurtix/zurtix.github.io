@@ -13,26 +13,48 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
-    <h1>Welcome to my Athanaeum.</h1>
+    <main class="flex w-full justify-center p-6">
+      <div class="flex flex-col gap-4 w-[900px]">
+      <div class="w-full flex justify-center">
+        <img width={400} src="../../public/z.jpg"/>
+        </div>
+
+      <h3 class="md:text-2xl text-md">Welcome</h3>
       <p>
       Thanks for visiting my corner of the internet. This space is a collection of my current explorations, experiments, and maybe some discoveries.
       I'm constantly looking to improve myself, and one way I've found to do so and solidify my understanding is attempting to teach it.
       Without someone to directly teach to, maybe this blog will help me teach myself in a manner. Hopefully those who stumble across this site will feel the same.
-      And perhaps teaching may not be the best word, but I digress. 
-			</p>
+        </p>
+
+      <h3 class="md:text-2xl text-md">Get to know me</h3>
       <p>
-      Please note going forward, some of these blog posts will be based on things I've learned or in the process of learning from other individuals.
-      I will do my best to make sure that associated links and references are included to ensure that one, credit is given where credit is due, and two provides whom ever is reading these with additional source of informaiton, rather than my possibly terrible ramblings.
-			</p>
-      <p>What you'll find here, either now or in the future...</p>
-			<ul>
-        <li>Rust/C/C++, currently mostly Rust because I really enojoy the language</li>
-        <li>Malware development & Red team stuff</li>
-				<li>Work being done on some of my projects</li>
-        <li>Ideas...? Maybe this is an idea.</li>
-			</ul>
-		</main>
+        If you'd like to get to know me and how I penetrated into security, check out my <a class="text-primary" href="/about">whoami</a>
+        </p>
+
+      <h3 class="md:text-2xl text-md">Readme</h3>
+      <p>
+        Looking for something to read? Perhaps some of my ramblings of ideas, projects I'm working on, or anything inbetween. Check out my <a class="text-primary" href="/blog">blog</a> posts.
+        </p>
+
+      <h3 class="md:text-2xl text-md">What you'll find here, either now or in the future...</h3>
+			<ul class="">
+        <li>- Rust/C/C++, currently mostly Rust because I really enojoy the language</li>
+        <li>- Malware development & Red team stuff</li>
+				<li>- Work being done on some of my projects</li>
+        <li>- Ideas...? Maybe this is an idea.</li>
+        </ul>
+      <h3 class="md:text-2xl text-md">Disclaimer</h3>
+        <p>
+          The information and content provided in this collection of my workings are for informational and ethical purposes only and are intended to be used as a general resource or educational tool.
+          By reading and using the information contained in this collection of work, you acknowledge that,
+        </p>
+        <ul>
+          <li>- You have read and understood the disclaimer and terms provided.</li>
+          <li>- You assume all risk associated with your use of the information provided.</li>
+          <li>- My affiliated parties and I shall not be liable for any direction or indirect damages, losses, or expenses incurred by you as a result of using this information in any way.</li>
+        </ul> 
+      </div>
+    </main>
 		<Footer />
 	</body>
 </html>
