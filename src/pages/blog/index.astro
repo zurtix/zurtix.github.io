@@ -1,48 +1,59 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import { Badge } from '@/components/ui/badge';
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { Badge } from "@/components/ui/badge";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
 <!doctype html>
 <html lang="en" class="dark">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section class="grid grid-cols-1 md:grid-cols-3 gap-2 w-full">
-					{
-						posts.map((post) => (
-							<div class="border border-secondary p-2">
-                <a href={`/blog/${post.slug}/`}>
-                  <div class="relative w-full">
-                    <div class="absolute top-0 right-0">
-                      {post.data.underConstruction && <Badge variant="destructive">Under Construction</Badge>}
-                      </div>
-									  <img width={720} height={360} src={post.data.heroImage} alt="" />
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-2 w-full">
+        {
+          posts.map((post) => (
+            <div class="border border-secondary p-2">
+              <a href={`/blog/${post.slug}/`}>
+                <div class="relative w-full">
+                  <div class="absolute top-0 right-0">
+                    {post.data.underConstruction && (
+                      <Badge variant="destructive">Under Construction</Badge>
+                    )}
                   </div>
-                  <h4 class="title font-bold p-2">{post.data.title}</h4>
-									<p class="date p-2">
-										<FormattedDate date={post.data.pubDate} />
-                  </p>
-                  <div class="flex gap-2 p-2">{post.data.tags.map((tag) => (<Badge variant="default">{tag}</Badge>))}</div>
-								</a>
-							</div>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+                  <img
+                    width={720}
+                    height={360}
+                    src={post.data.heroImage}
+                    alt=""
+                  />
+                </div>
+                <h4 class="title font-bold p-2">{post.data.title}</h4>
+                <p class="date p-2">
+                  <FormattedDate date={post.data.pubDate} />
+                </p>
+                <div class="flex gap-2 p-2">
+                  {post.data.tags.map((tag) => (
+                    <Badge variant="default">{tag}</Badge>
+                  ))}
+                </div>
+              </a>
+            </div>
+          ))
+        }
+      </section>
+    </main>
+
+    <Footer />
+  </body>
 </html>
