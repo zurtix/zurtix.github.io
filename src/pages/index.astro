@@ -1,109 +1,61 @@
 ---
-import "@/styles/global.css";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import '@/styles/global.css';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en" class="dark">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
     <main class="flex w-full justify-center p-6">
       <div class="flex flex-col gap-4 w-[900px]">
-        <div class="w-full flex justify-center">
-          <img width={400} src="/z.jpg" />
-        </div>
-        <h3 class="text-2xl">Welcome</h3>
-        <p>
-          This blog is where I test theories, push the limits of what's
-          possible, and explore the intricacies of malware development. It's
-          here that I reflect on my experiences, distill complex concepts into
-          actionable advice, and share my findings with anyone willing to
-          listen. By making this space public, I'm hoping to create a community
-          around cybersecurity and malware development – where we can learn from
-          each other, challenge assumptions, and grow together.
-        </p>
-        <h3 class="text-2xl">What you'll find here</h3>
-        <p>
-          This space is where I experiment, create, and share my thoughts on
-          various topics that interest me. As you explore the digital landscape
-          here, you might stumble upon:
-        </p>
-        <ul class="">
-          <li>
-            <b>Code & Development</b> : Expect to find snippets of code in languages
-            like Rust, C, and C++, with a strong bias towards Rust – I simply love
-            it! You'll also see examples of malware development and related work.
-          </li>
-          <li>
-            <b>Red/Blue Team Operations</b> : This is where I share my experiences
-            and insights on simulated attacks, penetration testing, and other cybersecurity-related
-            activities. It's a space to learn from each other and grow together.
-          </li>
-          <li>
-            <b>Project Updates & Development</b> : As new projects take shape or
-            existing ones evolve, you'll see updates on their progress here. From
-            prototypes to fully-fledged tools, I'll share my journey and invite your
-            feedback.
-          </li>
-          <li>
-            <b>Idea Generation & Discussion</b> : This is a space where ideas are
-            born, nurtured, or simply shared for discussion. Sometimes it's just
-            me thinking out loud, other times it might spark interesting conversations
-            with you.
-          </li>
-        </ul>
-        <h3 class="text-2xl">Get to know me</h3>
-        <p>
-          If you're curious about the person behind this blog, I invite you to
-          check out my <a class="text-primary" href="/about">whoami</a> page. There,
-          you'll find the story of how I became interested in security, and the journey
-          that led me from a place of curiosity to a passion for cybersecurity.<br
-          /><br />
-          From my earliest days as a security enthusiast to my current endeavors,
-          I've been driven by a desire to understand the complex world of security
-          and malware development. It's a space where creativity meets innovation,
-          and where the lines between right and wrong can often get blurred.
-        </p>
-        <h3 class="text-2xl">Readme</h3>
-        <p>
-          If you're looking for a glimpse into my thought process, or simply
-          want to see what's been cooking in my digital brain, then you've come
-          to the right place! Browse through my <a
-            class="text-primary"
-            href="/blog">blog</a
-          > posts to discover my latest ideas, projects I'm working on, and maybe
-          even some ramblings of thoughts that have occurred to me.
-        </p>
-        <h3 class="text-2xl">Disclaimer</h3>
-        <p>
-          The information and content provided in this collection of my workings
-          are for informational and ethical purposes only and are intended to be
-          used as a general resource or educational tool. By reading and using
-          the information contained in this collection of work, you acknowledge
-          that,
-        </p>
-        <ul>
-          <li>
-            - You have read and understood the disclaimer and terms provided.
-          </li>
-          <li>
-            - You assume all risk associated with your use of the information
-            provided.
-          </li>
-          <li>
-            - My affiliated parties and I shall not be liable for any direction
-            or indirect damages, losses, or expenses incurred by you as a result
-            of using this information in any way.
-          </li>
-        </ul>
+      <div class="w-full flex justify-center">
+        <img width={400} src="/z.jpg"/>
+      </div>
+      <h3 class="text-2xl">Welcome</h3>
+      <p>
+        This blog is where I test theories, push the limits of what's possible, and explore the intricacies of malware development. 
+        It's here that I reflect on my experiences, distill complex concepts into actionable advice, and share my findings with anyone willing to listen. 
+        By making this space public, I'm hoping to create a community around cybersecurity and malware development – where we can learn from each other, challenge assumptions, and grow together.
+      </p>
+      <h3 class="text-2xl">What you'll find here</h3>
+      <p>This space is where I experiment, create, and share my thoughts on various topics that interest me. As you explore the digital landscape here, you might stumble upon:</p> 
+      <ul class="">
+        <li><b>Code & Development</b> : Expect to find snippets of code in languages like Rust, C, and C++, with a strong bias towards Rust – I simply love it! You'll also see examples of malware development and related work.</li>
+        <li><b>Red/Blue Team Operations</b> : This is where I share my experiences and insights on simulated attacks, penetration testing, and other cybersecurity-related activities. It's a space to learn from each other and grow together.</li>
+        <li><b>Project Updates & Development</b> : As new projects take shape or existing ones evolve, you'll see updates on their progress here. From prototypes to fully-fledged tools, I'll share my journey and invite your feedback.</li>
+        <li><b>Idea Generation & Discussion</b> : This is a space where ideas are born, nurtured, or simply shared for discussion. Sometimes it's just me thinking out loud, other times it might spark interesting conversations with you.</li>
+      </ul>
+      <h3 class="text-2xl">Get to know me</h3>
+      <p>
+        If you're curious about the person behind this blog, I invite you to check out my <a class="text-primary" href="/about">whoami</a> page. 
+        There, you'll find the story of how I became interested in security, and the journey that led me from a place of curiosity to a passion for cybersecurity.<br/><br/>
+        From my earliest days as a security enthusiast to my current endeavors, I've been driven by a desire to understand the complex world of security and malware development. 
+        It's a space where creativity meets innovation, and where the lines between right and wrong can often get blurred.
+      </p>
+      <h3 class="text-2xl">Readme</h3>
+      <p>
+        If you're looking for a glimpse into my thought process, or simply want to see what's been cooking in my digital brain, then you've come to the right place! 
+        Browse through my <a class="text-primary" href="/blog">blog</a> posts to discover my latest ideas, projects I'm working on, and maybe even some ramblings of thoughts that have occurred to me.
+      </p>
+      <h3 class="text-2xl">Disclaimer</h3>
+      <p>
+        The information and content provided in this collection of my workings are for informational and ethical purposes only and are intended to be used as a general resource or educational tool.
+        By reading and using the information contained in this collection of work, you acknowledge that,
+      </p>
+      <ul>
+        <li>- You have read and understood the disclaimer and terms provided.</li>
+        <li>- You assume all risk associated with your use of the information provided.</li>
+        <li>- My affiliated parties and I shall not be liable for any direction or indirect damages, losses, or expenses incurred by you as a result of using this information in any way.</li>
+      </ul>
       </div>
     </main>
-    <Footer />
-  </body>
+		<Footer />
+	</body>
 </html>

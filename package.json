@@ -1,5 +1,5 @@
 {
-  "name": "zurtix-github-io",
+  "name": "surphix-github-io",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -7,8 +7,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "format": "pnpm exec prettier . --write"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
@@ -31,9 +30,5 @@
     "tailwindcss": "^3.4.10",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.5.4"
-  },
-  "devDependencies": {
-    "prettier": "3.3.3",
-    "prettier-plugin-astro": "^0.14.1"
   }
 }
