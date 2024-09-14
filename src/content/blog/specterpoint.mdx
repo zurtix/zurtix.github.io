@@ -1,0 +1,30 @@
+---
+title: 'SpecterPoint'
+description: 'The Rust C2 Server'
+pubDate: 'Sep 10 2024'
+heroImage: '/specterpoint/specterpoint.jpg'
+tags: ['rust', 'c2', 'malware']
+---
+
+See the repo here,  <a class="text-primary" href="https://github.com/zurtix/SpecterPoint">SpecterPoint</a><br/><br/>
+I'd imagine if you're clicking on this post you're wondering what is SpecterPoint - well I'll tell you. Welcome to my interpretation and development of a C2 server. Accompanied by a client, server, and agent, where I try to write as much in Rust as possible. Currently the only thing not written in rust is part of the client, as it's using typescript for UI components.<br/><br/>
+<span class="text-xl">What is a C2 server?</span><br/><br/>
+A C2, or also known as a Command and Control server, is a tool used in the vast arsenal of a threat actor. Actors will use C2 servers to communicate with infected hosts to, establish persistence, gather intel, deploy malware, or become a zombie as part of a botnet. Command and Control infrastructure is really neat, as it allows for an unorthodox method of controlling a host outside of the norms of something like RDP or SSH. Ideally this activity is well hidden making it difficult to detect. Check out these articles if you want to learn more about C2s.<br/><br/>
+&ensp;<span class="text-primary">https://www.sentinelone.com/cybersecurity-101/threat-intelligence/what-are-command-control-c2-servers/</span>  
+&ensp;<span class="text-primary">https://www.malwarepatrol.net/command-control-servers-c2-servers-fundamentals/</span>
+<br/>
+<span class="text-xl">Why a new C2, am I worried about who will use it?</span><br/><br/>
+What better way to learn how to understand and fight against a C2 than to create one. Lately I've been in this mode of writing malicious things to better understand it. Write code, reverse it, identify how it works, build against it. C2 servers have always been a little bit of mistery to me because I've seen a fair share of poorly implemented ones. Now I am not saying mine is well implemented, I plan to constantly add features to it when and if I can, but I'm starting small.<br/><br/>
+Which leads me to my next thing - am I worried about the possibility of threat actors using it? Well of course, but my code is no different than the existing other repos out there on git already. However, I would like to take this time to mention that this C2 is for purely educational and ethical purposes only.
+<br/>
+<span class="text-xl">The First Design Idea</span><br/><br/>
+So as I was planning to build this, I had an original design idea in mind. Build something capable of hosting multiple endpoint and listeners, support for deploying several servers that would feed information back to the client.<br/><br/>
+![initial design](/public/specterpoint/initial_design.png)
+<br/>
+Not too shabby right? Relatively simple design where we have clients talking to servers and agents communicating with the servers as well.
+<br/>
+<span class="text-xl">Getting Started</span><br/><br/>
+With every new project, I always find the hardest part is getting started, and this project was no different. So I thought to myself, what should I do first just to really get myself going. Easy! I'll do the thing I like the least, making things pretty. With the idea that I really wanted to keep rust for all aspects of the tool, I decided to use <a class="text-primary" href="https://tauri.app/">Tauri</a>.<br/><br/>
+Why Tauri and not <a href="https://dioxuslabs.com/">Dioxus</a> - well, Dioxus would have given me the opportunity to write more rust and both frameworks use web view. But if I'm being honest, I really wanted to upgrade my web development skills and using Tauri offered that. Tauri allowed me to write a lot of my client side code in TypeScript while still offering a rust backend. Thanks to this I got to experience and play with some libraries like <a class="text-primary" href="https://tanstack.com/router/latest/docs/framework/react/overview">Tanstack Router</a>, <a class="text-primary" href="https://tanstack.com/form/latest/docs/overview">TanStack Form</a>, <a class="text-primary" href="https://ui.shadcn.com/">Shadcn</a>, and <a class="text-primary" href="https://tailwindcss.com/">Tailwindcss</a>. But I wouldn't be surprise if I decide to swap over to Dioxus at some point just to learn and experiment with the library.<br/><br/>
+
+Under construction
