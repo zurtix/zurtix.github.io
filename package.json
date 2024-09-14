@@ -30,5 +30,8 @@
     "tailwindcss": "^3.4.10",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15"
   }
 }
