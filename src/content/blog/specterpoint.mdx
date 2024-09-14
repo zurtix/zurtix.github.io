@@ -14,12 +14,12 @@ A C2, or also known as a Command and Control server, is a tool used in the vast 
 &ensp;<span class="text-primary">https://www.malwarepatrol.net/command-control-servers-c2-servers-fundamentals/</span>
 <br/>
 <span class="text-xl">Why a new C2, am I worried about who will use it?</span><br/><br/>
-What better way to learn how to understand and fight against a C2 than to create one. Lately I've been in this mode of writing malicious things to better understand it. Write code, reverse it, identify how it works, build against it. C2 servers have always been a little bit of mistery to me because I've seen a fair share of poorly implemented ones. Now I am not saying mine is well implemented, I plan to constantly add features to it when and if I can, but I'm starting small.<br/><br/>
+What better way to learn how to understand and fight against a C2 than to create one. Lately I've been in this mode of writing malicious things to better understand it. Write code, reverse it, identify how it works, build against it. C2 servers have always been a little bit of mystery to me because I've seen a fair share of poorly implemented ones. Now I am not saying mine is well implemented, I plan to constantly add features to it when and if I can, but I'm starting small.<br/><br/>
 Which leads me to my next thing - am I worried about the possibility of threat actors using it? Well of course, but my code is no different than the existing other repos out there on git already. However, I would like to take this time to mention that this C2 is for purely educational and ethical purposes only.
 <br/>
 <span class="text-xl">The First Design Idea</span><br/><br/>
 So as I was planning to build this, I had an original design idea in mind. Build something capable of hosting multiple endpoint and listeners, support for deploying several servers that would feed information back to the client.<br/><br/>
-![initial design](/public/specterpoint/initial_design.png)
+![initial design](../images/specterpoint/initial_design.png)
 <br/>
 Not too shabby right? Relatively simple design where we have clients talking to servers and agents communicating with the servers as well.
 <br/>
