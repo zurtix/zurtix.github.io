@@ -132,13 +132,18 @@ curl -fsSL https://get.pnpm.io/install.sh | sh -
 
 ### Creating the Workspace
 
+Before creating the Tauri app, we need to properly configure the workspace.
+
+
 ```shell
-mkdir SpecterPoint
+# Create both the Specterpoint directory and client subdirectory
+mkdir SpecterPoint && mkdir Specterpoint/client/
+cd SpecterPoint
 touch Cargo.toml
 cargo new server
 cargo new agent
 cargo new common --lib
-cargo new commons --lib
+cargo new comms --lib
 ```
 
 Populate our Cargo.toml with the following
@@ -147,5 +152,43 @@ Populate our Cargo.toml with the following
 [workspace]
 members = ["client/src-tauri", "server", "agent", "common", "comms"]
 ```
+
+#### Tauri
+
+[Getting Started - Setup](https://tauri.app/v1/guides/getting-started/setup/)
+
+```shell
+cd Specterpont/client/
+pnpm create tauri-app@latest
+```
+
+As you're building the app, set the name however you'd like, followed by selecting the desired language (TypeScript / JavaScript), package manager (pnpm),  followed by your UI template (React). Feel free to experiment with other options and attempt in replicating what was built in a different language or framework.
+
+## Frontend Setup
+
+For the frontend as mentioned previously, it was planned to utilize Shadcn and Tailwind CSS.
+
+Firstly we will install Tailwind CSS since it is required by Shadcn.
+
+#### Tailwind CSS
+
+I recommend their install page as it is well documented.
+
+[Tailwind CSS Install](https://tailwindcss.com/docs/installation)
+
+
+#### Shadcn
+
+Since this tool was built with React, we will need to install Shadcn the manual way.
+
+[Shadcn Manual Install](https://ui.shadcn.com/docs/installation/manual)
+
+## Get to Coding Already
+
+With the prerequisites and some of the setup out of the way, we can finally get to some of the details of the code.
+
+#### Frontend
+
+
 
 Under construction
