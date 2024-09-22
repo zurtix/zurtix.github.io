@@ -6,7 +6,7 @@ heroImage: "/specterpoint/specterpoint.jpg"
 tags: ["rust", "c2", "malware"]
 ---
 
-See the repo here, [SpecterPoint](https://github.com/zurtix/SpecterPoint">SpecterPoint)
+See the repo here, [SpecterPoint](https://github.com/zurtix/SpecterPoint)
 
 I'd imagine if you're clicking on this post you're wondering what is SpecterPoint - well I'll tell you. Welcome to my interpretation and development of a C2 server. Accompanied by a client, server, and agent, where I try to write as much in Rust as possible. Currently the only thing not written in rust is part of the client, as it's using typescript for UI components. Before advancing to the next section, please understand there is a lot of information to cover. I apologize if my ideas are a little all over the place. I am trying my best to not only provide an easy to read experience, but get enough technological information crammed in as possible.
 
