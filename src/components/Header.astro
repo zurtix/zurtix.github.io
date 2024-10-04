@@ -1,21 +1,20 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
 ---
 
 <header class="m-0 p-2 bg-black">
-	<nav>
+  <nav>
     <h2 class="text-xl m-2">
       <a href="/" class="flex">
-        <span class="text-primary">Z</span>URTI<span class="text-primary">X</span>
+        <span class="text-primary">Z</span><span>URTI</span><span class="text-primary">X</span>
       </a>
     </h2>
-		<div class="md:mr-16">
+		<div class="">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/projects">Projects</HeaderLink>
 			<HeaderLink href="/about">Whoami</HeaderLink>
-		</div>
+      </div>
 		<div class="social-links">
 			<a href="https://github.com/zurtix" target="_blank">
 				<span class="sr-only">Go to ZURTIX's GitHub repo</span>
@@ -30,6 +29,7 @@ import { SITE_TITLE } from '../consts';
 	</nav>
 </header>
 <style>
+
 	header {
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
@@ -41,7 +41,14 @@ import { SITE_TITLE } from '../consts';
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-	}
+  }
+  @media (max-width: 720px) {
+    nav {
+      display: block;
+      margin-bottom: 6%;
+      text-align: center;
+    }
+  }
 	nav a {
 		padding: 1em 0.5em;
 		#color: var(--black);

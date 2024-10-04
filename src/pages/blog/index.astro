@@ -20,7 +20,7 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<section class="grid grid-cols-1 md:grid-cols-3 gap-2 w-full">
+			<section class="grid grid-cols-1 md:grid-cols-3 gap-2 w-full p-6">
 					{
 						posts.map((post) => (
 							<div class="border border-secondary p-2">
@@ -35,7 +35,7 @@ const posts = (await getCollection('blog')).sort(
 									<p class="date p-2">
 										<FormattedDate date={post.data.pubDate} />
                   </p>
-                  <div class="flex gap-2 p-2">{post.data.tags.map((tag) => (<Badge variant="default">{tag}</Badge>))}</div>
+                  <div class="flex flex-wrap gap-2 p-2">{post.data.tags.map((tag) => (<Badge variant="default">{tag}</Badge>))}</div>
 								</a>
 							</div>
 						))

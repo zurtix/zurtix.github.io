@@ -71,9 +71,22 @@ export default {
               textDecoration: 'no-underline',
               fontWeight: '0'
             },
+            code: {
+              color: 'hsl(var(--primary))',
+              '&::before': {
+                content: '"" !important',
+              },
+              '&::after': {
+                content: '"" !important',
+              },
+            },
             span: {
               color: 'hsl(var(--primary))'
             },
+            th: {
+              color: 'white',
+              textTransform: 'capitalize'
+            }
           }
         }
       }
