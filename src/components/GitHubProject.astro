@@ -1,0 +1,21 @@
+---
+// src/components/GitHubProject.astro
+const { title, description, url, languages } = Astro.props;
+import { Badge } from "./ui/badge";
+---
+
+<div class="flex flex-col gap-4 border border-r-8 p-4">
+  <div class="flex justify-between text-center">
+    <h2 class="font-bold text-2xl">{title}</h2>
+  </div>
+  <p>{description}</p>
+  <div class="flex justify-between">
+    <div class="flex gap-2">
+      {(languages).map((language : string) => (
+        <Badge variant="default">{language}</Badge>
+      ))}
+    </div>
+    <a href={url} target="_blank" class="text-primary">View on GitHub</a>
+  </div>
+</div>
+

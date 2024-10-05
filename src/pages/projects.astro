@@ -1,13 +1,43 @@
 ---
+// src/pages/index.astro
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import GitHubProject from '../components/GitHubProject.astro';
 import Layout from '../layouts/Project.astro';
+
+const projects = [
+  {
+    title: "SpecterPoint",
+    description: "SpecterPoint is a research initiative designed to enhance understanding of Command and Control (C2) servers, which are critical components in the architecture of cyber attacks. The project's objectives include studying the methods and technologies used to construct C2 servers, gaining hands-on experience in building a C2 server, and developing effective strategies for detecting these malicious infrastructures. By examining the lifecycle and characteristics of C2 servers, SpecterPoint aims to contribute valuable insights to cybersecurity defenses, helping organizations identify and mitigate the threats posed by such servers. The project also explores the latest trends and techniques used by attackers to maintain and obfuscate their C2 operations, thereby supporting the development of advanced detection and prevention tools.",
+    url: "https://github.com/zurtix/SpecterPoint",
+    languages: ["TypeScript", "Rust"]
+  }
+];
 ---
 
-<Layout
-	title="Projects"
-	description="What I'm working on"
->
-  <div class="text-center">
-  <p>Under construnction
-  </p>
-  </div>
-</Layout>
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="w-full">
+        <section class="m-auto flex flex-col gap-2 w-[900px]">
+          {projects.map((project) => (
+            <GitHubProject 
+              title={project.title} 
+              description={project.description} 
+              url={project.url} 
+              languages={project.languages} 
+            />
+          ))}
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
