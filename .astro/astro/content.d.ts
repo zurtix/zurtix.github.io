@@ -165,6 +165,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"chrome-setup.md": {
+	id: "chrome-setup.md";
+  slug: "chrome-setup";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "specterpoint.md": {
 	id: "specterpoint.md";
   slug: "specterpoint";
