@@ -61,7 +61,7 @@ Inside the function `openURL`, we can deduce that the `main.OpenUrl` function 
 
 ![LOLBAS Result](/chrome-setup/lolbas_result.png)
 
-Following the first instance `main.OpenUrl([value])` is called, the `main.GetUuid` is being used to pull the command uuid from the embedded c2 url stored within `main.BackendLocation`. The `main.BackendLocation`, a pointer to a location where `DAT_006c7911` is storing the value , `hxxps://totalblock-api-anal[.]xyz`, is used in conjunction with the endpoint `/command/uuid`. Along with these values the public IP obtained previously is concatenated to the end as a parameter to the GET. As a result we would see requests such as `hxxps://totalblock-api-anal[.]xyz/command/uuid/00.00.00.00`, where `00.00.00.00` would be replaced by a valid ip.
+Following the first instance of `main.OpenUrl([value])`, the `main.GetUuid` is being used to pull the command uuid from the embedded c2 url stored within `main.BackendLocation`. The `main.BackendLocation`, a pointer to a location where `DAT_006c7911` is storing the value , `hxxps://totalblock-api-anal[.]xyz`, is used in conjunction with the endpoint `/command/uuid`. Along with these values the public IP obtained previously is concatenated to the end as a parameter to the GET. As a result we would see requests such as `hxxps://totalblock-api-anal[.]xyz/command/uuid/00.00.00.00`, where `00.00.00.00` would be replaced by a valid ip.
 
 ![C2 Endpoint in Function](/chrome-setup/c2_endpoint_in_function.png)
 
@@ -126,9 +126,9 @@ Once these certificates have been configured we can move on to modifying the cus
 
 ### Configurations
 
-Create the two following withing the `C:\Tools\fakenet\fakenet3.2-alpha\configs` directory,
+Create the two following within the `C:\Tools\fakenet\fakenet3.2-alpha\configs` directory,
 
-`ifconfigme.ini` this configuration will be used to provide a statically set public IP from the `fake_ifconfig_me.py` handler, in which we can use to tricking the malware it succeeded in collecting the data from `ifconfig.me`.
+`ifconfigme.ini` this configuration will be used to provide a statically set public IP from the `fake_ifconfigme.py` handler, in which we can use to tricking the malware it succeeded in collecting the data from `ifconfig.me`.
 
 ```
 [Example0] 
