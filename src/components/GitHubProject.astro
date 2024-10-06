@@ -4,7 +4,7 @@ const { title, description, url, languages } = Astro.props;
 import { Badge } from "./ui/badge";
 ---
 
-<div class="flex flex-col gap-4 border border-r-8 p-4">
+<div class="flex flex-col gap-4 border border-r-8 p-4 overflow-hidden">
   <div class="flex justify-between text-center">
     <h2 class="font-bold text-2xl">{title}</h2>
   </div>

@@ -26,8 +26,8 @@ const projects = [
   <body>
     <Header />
     <main>
-      <div class="w-full">
-        <section class="m-auto flex flex-col gap-2 w-[900px]">
+      <div class="flex m-auto md:w-[900px]">
+        <section class="m-auto flex flex-col gap-2 m-auto p-2">
           {projects.map((project) => (
             <GitHubProject 
               title={project.title} 

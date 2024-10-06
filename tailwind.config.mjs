@@ -86,6 +86,10 @@ export default {
             th: {
               color: 'white',
               textTransform: 'capitalize'
+            },
+            td: {
+              overlfow: 'hidden',
+              overflowWrap: 'break-word'
             }
           }
         }
