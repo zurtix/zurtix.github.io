@@ -20,11 +20,11 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<section class="grid grid-cols-1 md:grid-cols-3 gap-2 w-full p-6">
+			<section class="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-4 gap-2 w-full p-2">
 					{
 						posts.map((post) => (
 							<div class="border border-secondary p-2">
-                <a href={`/blog/${post.slug}/`}>
+                <a href={`/blog/${post.slug}/`} >
                   <div class="relative w-full">
                     <div class="absolute top-0 right-0">
                       {post.data.underConstruction && <Badge variant="destructive">Under Construction</Badge>}
