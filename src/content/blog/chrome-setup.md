@@ -215,5 +215,7 @@ As a result once everything is properly configured, we can see the full executio
 | type   | value                     |
 | ------ | ------------------------- |
 | DOMAIN | totalblock-api-anal[.]xyz |
-
+| MD5    | d6467b0e52e668d43d89e74853ff2626 |
+| SHA1   | d36c5285dcd9b3e8c6743bd7b982dd68d00fa01b |
+| SHA256 | 16a64a9cd20e35e85de9500fd2c6596be9c450d3ea40faafec82f2d6ed6da0fd |
 
