@@ -3,7 +3,7 @@ title: 'ChromeSetup Call Home Malware'
 description: 'Threat actors utilizing a fake chrome setup to identify users willing to execute what was downloaded'
 pubDate: 'Oct 05 2024'
 heroImage: '/chrome-setup/chrome-setup.jpg'
-tags: ['malware', 'chrome']
+tags: ['malware', 'chrome', 'go']
 underConstruction: false
 ---
 
