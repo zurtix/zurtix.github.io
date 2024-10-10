@@ -172,6 +172,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"lokexe.md": {
+	id: "lokexe.md";
+  slug: "lokexe";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "rel0909_x86-64.md": {
 	id: "rel0909_x86-64.md";
   slug: "rel0909_x86-64";
