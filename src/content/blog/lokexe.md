@@ -154,7 +154,7 @@ Finally, looking at our FakeNet logs, we can see that a call was made out on beh
 
 ## Debugging & Reversing
 
-For this next step we will configure some DLLCharacteristics using `CFF Explorer`. We will need to modify these characteristics to ensure that the DLL does not move. In doing so we will be able to follow along within Ghidra at the same base memory address. This will make it easier as we walk through the code to identify where exactly we are within the debugger in comparison to the decompilation. Once these changes have been made we can save our new version to the desktop and open within `x32dbg` and `Ghidra.
+For this next step we will configure some DLLCharacteristics using `CFF Explorer`. We will need to modify these characteristics to ensure that the DLL does not move. In doing so we will be able to follow along within Ghidra at the same base memory address. This will make it easier as we walk through the code to identify where exactly we are within the debugger in comparison to the decompilation. Once these changes have been made we can save our new version to the desktop and open within `x32dbg` and `Ghidra`.
 
 ![CFF Explorer](/lokexe/cff_explorer.png)
 
