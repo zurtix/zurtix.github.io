@@ -195,6 +195,9 @@ Additional processor enumeration.
 ![Get Processor Information](/lokexe/get_processor_information.png)
 
 
+## <span style="color:orange">The remainder of this page is under construction. Stay tuned!</span>
+
+
 ## Indicators
 
 | Type    | Value                                                            |
