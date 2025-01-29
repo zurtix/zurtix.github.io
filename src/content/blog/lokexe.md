@@ -402,8 +402,76 @@ This is then followed by several calls being made the "`shell32`" functions whil
 
 ![Malicious calls](/lokexe/shell32_malciious_calls.png)
 
+After reviewing the calls from `shell32`, we can place a breakpoint on `CreateProcessW` within `x32dbg` with `bp CreateProcessW`. This will help us identify the calling function for `more.com`. As we can see we find ourselves at the breakpoint and can analyze how the process is created and review the handles for future references.
 
-## <span style="color:orange">The remainder of this page is under construction. Stay tuned!</span>
+```
+CreateProcessW (
+  0 // lpApplicationName,
+  L"C:\\Windows\\SysWOW64\\more.com" // lpCommandLine,
+  0 // lpProcessAttributes,
+  0 // lpThreadAttributes,
+  1 // bInheritHandles,
+  0x080000000 // dwCreationFlags -> CREATE_NO_WINDOW
+  0 // lpEnvironment,
+  0 // lpCurrentDirectory,
+  0x0019EF74 // lpStartupInfo,
+  0x0019F3F0 // lpProcessInformation
+)
+```
+![CreateProcessW more.com](/lokexe/create_process_more_com.png)
+
+On return from this function we can see we land ourselves within `shdocvw.dll`. This library in particular is for use within Internet Explorer Integration, Windows Shell Integration, handling of web protocols, and provides legacy support for older applications. However, I believe this is being leveraged for DLL hallowing. A method to be more evasive by using file-less techniques in order to hide in plain sight within the memory of the sample.
+
+![shdocvw from create process](/lokexe/shdocvw_from_create_process.png)
+
+
+Since we now have quite a lot of details in terms of how `more.com` is being executed, let's now try and take a look at debugging it. With our existing breakpoint to `CreateProcessW`, we can take one step over and begin attaching a debugger using `x64dbg`. It's important to leverage `x64dbg` here because we know that `more.com` is coming from `C:\Windows\SysWOW64\`.
+
+![Attach more.com](/lokexe/attach_debugger_more.png)
+
+Before continuing the execution after our `CreateProcessW` within the `TrayButton` app, we will want to set a breakpoint on `CreateProcessW` for our newly attached debugger via `bp CreateProcessW`. This will give us the chance to capture `MSBuild.exe` as it attempts to spin up.
+
+```
+CreateProcessW (
+  0 // lpApplicationName,
+  L"C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe" // lpCommandLine,
+  0 // lpProcessAttributes,
+  0 // lpThreadAttributes,
+  1 // bInheritHandles,
+  0x000000004 // dwCreationFlags -> CREATE_SUSPENDED
+  0 // lpEnvironment,
+  0 // lpCurrentDirectory,
+  0x020EF878 // lpStartupInfo,
+  0x020EF8C4 // lpProcessInformation
+)
+```
+
+![MSBuild Create Process](/lokexe/msbuild_create_process.png)
+
+
+Before returning from the `CreateProcessW` of the `MSBuild.exe` we can attach another debugger to ensure we capture it's progress.
+
+![MSBuild Attach](/lokexe/attach_msbuild.png)
+
+Once successfully attached we can revisit our other instance of `x32dbg` that is debugging `more.com` and continue it's execution so that `MSBuild.exe` can takeover.
+
+After spending a little of time debugging the process, I came across a location in which I could see calls out to the C2 were being made. In order to determine this we can review the functions and identify any communication out that is being made on behalf of the sample as we debug. In particular the function call at `0082AF22` makes a request out to the C2 as we can see within `FakeNet`.
+
+![MSBuild tcp call](/lokexe/msbuild_tcp_call.png)
+
+![MSBuild fakenet](/lokexe/fakenet_msbuild.png)
+
+
+While stepping through the function, we can see that the sample generates a json message within the `ECX` register.
+
+![AFKSystem ECX](/lokexe/afk_system_ecx.png)
+
+This is returned by the process of decryption via manipulation using `xor` and `and` which we can see at `00828F32`. Once the values are fully `xor` we will find our resulting `AfkSystem` json value.
+
+![AfkSystem Decrypt](/lokexe/afksystem_decrypt.png)
+
+This value as we see is very common to `SectopRAT` also known as `AerchClient2`.  
+
 
 ## Indicators
 
