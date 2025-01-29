@@ -3,7 +3,7 @@ title: 'Lok.exe RAT Malware'
 description: 'RAT Malware - Additional information TBD'
 pubDate: 'Oct 23 2024'
 heroImage: '/lokexe/lokexe.png'
-tags: ['malware', 'rat', 'c++', 'hijackloader']
+tags: ['malware', 'rat', 'c++', 'hijackloader', 'sectoprat', 'arechclient2']
 underConstruction: true
 ---
 
